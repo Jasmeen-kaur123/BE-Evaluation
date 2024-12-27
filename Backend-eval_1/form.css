@@ -1,0 +1,135 @@
+/* form.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7ff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-section label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.name-group, .birth-group, .address-group {
+  display: flex;
+  gap: 10px;
+}
+
+input, select {
+  width: 96%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  gap:10px;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.name-group input, .address-group input {
+  flex: 1;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+select#gender {
+  width: 100%;
+}
+
+input#street-address {
+  width: 97%;
+}
+
+input#street-address-2 {
+  width: 97%;
+}
+
+input#zip {
+  width: 97%;
+}
+.email-group {
+  display: flex;
+  gap:96px;
+}
+
+select#university {
+  width: 100%;
+}
+
+select#course {
+  width: 100%;
+}
+
+
+textarea {
+  width: 97%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+textarea:focus {
+  width: 97%;
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-section{
+  text-align: center;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}

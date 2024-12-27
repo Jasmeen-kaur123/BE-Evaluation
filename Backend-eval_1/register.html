@@ -1,0 +1,293 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="/register" method="POST">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+    
+        <button type="submit">Register</button>
+       
+    </form>
+    
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7ff;
+  }
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-section label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .name-group, .birth-group, .address-group {
+    display: flex;
+    gap: 10px;
+  }
+  input, select {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  input::placeholder {
+    color: #aaa;
+  }
+  .name-group input, .address-group input {
+    flex: 1;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  select#gender {
+    width: 100%;
+  }
+  input#street-address, input#zip {
+    width: 97%;
+  }
+  .email-group {
+    display: flex;
+    gap: 96px;
+  }
+  select#university, select#course {
+    width: 100%;
+  }
+  textarea {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  .btn-section {
+    text-align: center;
+  }
+  .submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+  .submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  }
+</style>
+<body>
+  <div class="container">
+    <h1>Registration Form</h1>
+    <p>Fill out the form carefully for registration</p>
+    <form action="/register" method="POST">
+      <div class="form-section">
+        <label for="first-name">Student Name</label>
+        <div class="name-group">
+          <input type="text" id="first-name" name="first_name" placeholder="First Name" required>
+          <input type="text" id="middle-name" name="middle_name" placeholder="Middle Name">
+          <input type="text" id="last-name" name="last_name" placeholder="Last Name" required>
+        </div>
+      </div>
+      <div class="form-section">
+        <label for="birth-date">Birth Date</label>
+        <div class="birth-group">
+          <select id="month" name="birth_date">
+            <option>Select</option>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+          </select>
+          <select id="day" name="day">
+            <option>Select</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+          </select>
+          <select id="year" name="year">
+            <option>Select</option>
+            <option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+            <option>2006</option>
+            <option>2007</option>
+            <option>2008</option>
+            <option>2009</option>
+            <option>2010</option>
+            <option>2011</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
+            <option>2024</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-section">
+        <label for="gender">Gender</label>
+        <select id="gender" name="Gender">
+          <option>Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-section">
+        <label for="address">Address</label><br>
+        <input type="text" id="street-address" name="street_address" placeholder="Street Address"><br><br>
+        <div class="address-group">
+          <input type="text" id="city" placeholder="City" name="city">
+          <input type="text" id="state" name="state" placeholder="State / Province">
+        </div><br>
+        <input type="text" id="zip" name="zip" placeholder="Zip/Postal code">
+      </div>      
+      <div class="form-section">
+        <div class="email-group">
+          <div>
+            <label for="email">Student E-mail</label>
+            <input type="email" id="email" name="email" placeholder="ex: myname@example.com">
+
+          </div>
+          <div>
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="(+91) 00000-00000">
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone_number" placeholder="(+91) 00000-00000">
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <label for="university">University</label>
+        <select id="university" name="university" >
+          <option>Select</option>
+          <option>Chitkara University,Punjab</option>
+          <option>Chitkara University,Himachal</option>
+          <option>Chandigarh University</option>
+          <option>Punjab University</option>
+        </select>
+      </div>
+      <div class="form-section">
+        <label for="course">Course</label>
+        <select id="course" name="course">
+          <option>Select</option>
+          <option>BE-CSE</option>
+          <option>BBA</option>
+          <option>BCA</option>
+          <option>BE-CSE-AI</option>
+        </select>
+      </div>
+      
+      <div class="btn-section">
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+      
+    </form>
+  </div>
+
+</body>
+</html>

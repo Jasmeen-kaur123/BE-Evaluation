@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students</title>
+    
+</head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #700e0e;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+</style>
+<body>
+    <h1>Student Data</h1>
+
+    <script>
+        // Update the heading dynamically
+        document.getElementsByTagName("h1")[0].innerHTML = "All Registered Students";
+
+        // Fetch data from the server
+        fetch("http://localhost:3000/allstudent")
+            .then((responce) =>  { return responce.json() })
+            .then((data) => {
+                console.log("html da",data);
+
+                // Create a table
+                const table = document.createElement('table');
+                const tableHead = document.createElement('thead');
+                const tableBody = document.createElement('tbody');
+
+                // Define table headers
+                const headers = ['First Name', 'Middle Name', 'Last Name', 'Birth Date', 'Gender', 'Address', 'Email', 'Mobile', 'University', 'Course'];
+                const headerRow = document.createElement('tr');
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    headerRow.appendChild(th);
+                });
+                tableHead.appendChild(headerRow);
+
+                // Populate table rows with data
+                data.forEach(person => {
+                    const row = document.createElement('tr');
+
+                    // Create and populate cells for each field
+                    const fields = [
+                        person.firstName, 
+                        person.middleName, 
+                        person.lastName, 
+                        person.birthDate, 
+                        person.gender, 
+                        `${person.address.street}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`, 
+                        person.email, 
+                        person.mobile, 
+                        person.university, 
+                        person.course
+                    ];
+
+                    fields.forEach(field => {
+                        const cell = document.createElement('td');
+                        cell.textContent = field || 'N/A';
+                        row.appendChild(cell);
+                    });
+
+                    tableBody.appendChild(row);
+                });
+
+                // Append table head and body to table
+                table.appendChild(tableHead);
+                table.appendChild(tableBody);
+                document.body.appendChild(table);
+            })
+            .catch(error => console.error("Error fetching data:", error));
+    </script>
+</body>
+
+</html>
